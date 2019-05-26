@@ -16,4 +16,4 @@ Spectral clustering은 Sklearn library를 사용하여 나타내었다.
 
 Girvan-Newman의 경우 networkx library를 사용하였으며, 기본적으로 graph를 생성하기위해 networkx를 사용하였다.
 
-Neo-k-menas의 경우 branch Neo속 코드를 사용하여 군집화를 하였다.(Branch Neo)를 참고하기 바란다.
+Neo-k-menas의 경우 Neo속 코드를 사용하여 군집화를 하였다.(Neo)를 참고하기 바란다.
