@@ -1,0 +1,23 @@
+Spectral clustering 과 마찬가지로 graph를 생성하는 과정에서 ego node를 사용하지 않아 엉뚱한 군집화를 이루었었다.
+
+이를 해결 한 후 Girvan-Newman-method라는 코드를 만들어 networkx 상의 girvan newman library를
+
+사용하지 않고 modularity를 계산하고 betweeness가 가장 높은 edge를 끊는 방법을 사용하고자 하였다. 
+
+그 결과 modularity가 147개의 edge를 제거했을때 0.4926의 modularity를 나타냈으며 총 7개의 군집을 이루었다. 
+
+이후 결과가 제대로 나왔는지 확인하기위해 girvan newman library를 사용하여 비교하였다. 
+
+결과가 똑같이 나왔으므로 문제가 없는 것으로 판별하였다. 
+
+그 결과 
+
+Cluster 1 	Cluster 2 	Cluster 3    Cluster 4	  Cluster 5	  Cluster 6	  Cluster 7	  Avg F1-Score
+    0	     0.8780	     0.4705	         0	        0.9804	      0	        0.9074	    0.4622
+
+를 나타내었고 많은 node 들이 속한 군집에 대해서만 군집화를 이루어 내었고 10개 이하의 군집에 대해서는 단 하나도 군집화를 이루지 못한 것으로 보인다.
+
+이 이유는 noise data에 대해 군집을 이루었기때문에 이로인해 실제 군집에 대해서 군집화를 이루지 못한것으로 보인다. 
+
+하지만 어떻게 7개의 군집을 이루었을때 modularity가 제일 큰 이유에 대해서는 생각을 해봐야 할 것으로 보인다. 
+

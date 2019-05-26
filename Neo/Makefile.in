@@ -1,0 +1,14 @@
+# Which compiler to use
+CC = g++
+
+# What optimization level to use
+OPTFLAGS = -O2 -fPIC
+
+# What options to be used by the compiler
+COPTIONS = -DNUMBITS=32
+
+# What archiving to use
+AR = ar rv
+
+# What to use for indexing the archive
+RANLIB = ranlib

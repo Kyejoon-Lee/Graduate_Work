@@ -1,0 +1,23 @@
+먼저 414.csv를 통해 그래프를 형성한 후 이를 통해 spectral clustering을 수행하고자 하였다.
+
+하지만 처음에 만들어진 graph는 ego node를 포함하지 않은 graph였기 때문에 fully connected component graph가 아니였다.
+
+이로 인해 에러 메세지 창이 나타났다.
+
+또 군집화된 값들 또한 Avg F1-score가 0.3724 의 매우 낮은 값을 나타냈다. 
+
+이를 해결하기 위해 150개의 노드와 연결된 ego node를 하나 선정한 후 모든 node와 연결을 시킨 후 다시 군집화를 실행하였다.
+
+그 결과 ground truth와 같으 7개의 군집화를 실행하였을 경우
+
+	Cluster 1	Cluster 2	Cluster 3	Cluster 4	Cluster 5	Cluster 6	Cluster 7	Avg F1-Score
+	   0.1176	  0.8485	   0.45	   	   0	      	 0.9804	  	 0.5833	  	  0.6966	  0.5252
+
+의 값을 기록하였다. 
+
+이 외에 군집화의 갯수를 6, 8개로 설정 한 후 실행하였을 때 군집화를 6개로 실행하였을 때 7개의 경우보다 더 높은 F1-score를 기록하였지만
+
+Ground-truth 상의 한 군집화를 아예 나타내지 않기 때문에 인것으로 판단하였다.
+
+반대로 8개로 설정하고 군집화를 진행하였을 때 군집 7개를 모두 표현하였지만 따로 존재하는 군집으로 인해 보다 낮은 F1-score를 기록하였다.
+
